@@ -70,3 +70,4 @@ D:\Univer\Web\WebApplication3\WebApplication3\obj\Debug\net6.0\refint\WebApplica
 D:\Univer\Web\WebApplication3\WebApplication3\obj\Debug\net6.0\WebApplication3.pdb
 D:\Univer\Web\WebApplication3\WebApplication3\obj\Debug\net6.0\WebApplication3.genruntimeconfig.cache
 D:\Univer\Web\WebApplication3\WebApplication3\obj\Debug\net6.0\ref\WebApplication3.dll
+D:\Univer\Web\WebApplication3\WebApplication3\bin\Debug\net6.0\MySql.Web.dll

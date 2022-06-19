@@ -19,9 +19,14 @@
     </PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.29" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.1" />
+    <PackageReference Include="MySql.Web" Version="8.0.29" />
     <PackageReference Include="MySqlConnector" Version="2.1.10" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

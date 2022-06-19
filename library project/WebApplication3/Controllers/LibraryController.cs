@@ -12,15 +12,29 @@ namespace WebApplication3.Controllers
         [HttpPost("LibraryController/CreateClient")]
         public ActionResult Create(string name, string birthDate, string city, string phone, string regDate)
         {
+
             Client a = new Client();
-            a.Name = name;
-            a.BirthDate = birthDate;
-            a.Phone = phone;
-            a.RegisterDate = regDate;
+            using (MySqlConnection con = new MySqlConnection("server=localhost;user=root;password=0011;database=library"))
+            {
+                a.Name = name;
+                a.BirthDate = birthDate;
+                a.Phone = phone;
+                a.RegisterDate = regDate;
+                
+                MySqlCommand command = new MySqlCommand("INSERT INTO reader(name, birthDate, phoneNumber, registerDate) VALUES(@name, @birthDate, @phone, @regDate)", con);
+                command.Parameters.AddWithValue("@name", a.Name);
+                command.Parameters.AddWithValue("@birthDate", a.BirthDate) ;
+                command.Parameters.AddWithValue("@phone", a.Phone);
+                command.Parameters.AddWithValue("@regDate", a.RegisterDate);
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
+
+            }
             return Ok(a);
         }
         
-        [HttpGet("LibraryController/GetClient")]
+        [HttpGet("LibraryController/GetClients")]
         public ActionResult GetClient()
         {
             List<Client> clients = new List<Client>();
@@ -32,44 +46,76 @@ namespace WebApplication3.Controllers
 
                 while (reader.Read())
                 {
-                    Client a = new Client();
-                    a.id = reader.GetInt32(0);
-                    a.Name = reader.GetString(1);
-                    a.BirthDate = reader.GetString(2);
-                    a.Phone = reader.GetString(3);
-                    a.RegisterDate = reader.GetString(4);
-                    clients.Add(a);
+                    Client client = new Client();
+                    client.id = reader.GetInt32(0);
+                    client.Name = reader.GetString(1);
+                    client.BirthDate = reader.GetString(2);
+                    client.Phone = reader.GetString(3);
+                    client.RegisterDate = reader.GetString(4);
+                    clients.Add(client);
                 }
                 reader.Close();
             }
             return Ok(clients);
         }
 
-        // POST: LibraryController/Create
-        //[HttpPost("create")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [HttpPost("LibraryController/AddBook")]
+        public ActionResult AddBook(int Id, string name, string category, string author, string bookCond, string year, int reader)
         {
-            try
+
+            BookBase book = new BookBase();
+            using (MySqlConnection con = new MySqlConnection("server=localhost;user=root;password=0011;database=library"))
             {
-                return RedirectToAction(nameof(Index));
+                book.id = Id;
+                book.Name = name;
+                book.Category = category;
+                book.Author = author;
+                book.BookCondition = bookCond;
+                book.Year = year;
+                book.Reader = reader;
+
+                MySqlCommand command = new MySqlCommand("INSERT INTO book VALUES(@idbooks, @bookName, @category, @author, @bookCondition, @releaseDate, @readId)", con);
+                command.Parameters.AddWithValue("@idbooks", book.id);
+                command.Parameters.AddWithValue("@bookName", book.Name);
+                command.Parameters.AddWithValue("@category", book.Category);
+                command.Parameters.AddWithValue("@author", book.Author);
+                command.Parameters.AddWithValue("@bookCondition", book.BookCondition);
+                command.Parameters.AddWithValue("@releaseDate", book.Year);
+                command.Parameters.AddWithValue("@readId", book.Reader);                
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
+
             }
-            catch
-            {
-                return View();
-            }
+            return Ok(book);
         }
-        
-        [HttpGet("rand/{id}")]
-        public IEnumerable<WeatherForecast> Get()
+
+        [HttpGet("LibraryController/GetBook")]
+        public ActionResult GetBooks()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            List<BookBase> books = new List<BookBase>();
+            using (MySqlConnection con = new MySqlConnection("server=localhost;user=root;password=0011;database=library"))
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                //Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT idbooks, bookName, category, author, bookCondition, releaseDate FROM book", con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    BookBase book = new BookBase();
+                    book.id = reader.GetInt32(0);
+                    book.Name = reader.GetString(1);
+                    book.Category = reader.GetString(1);
+                    book.Author = reader.GetString(3);
+                    book.BookCondition = reader.GetString(4);
+                    book.Year = reader.GetString(5);
+                    //book.Reader = reader.GetInt32(6);
+                    books.Add(book);
+                }
+                reader.Close();
+            }
+            return Ok(books);
         }
+
     }
 }

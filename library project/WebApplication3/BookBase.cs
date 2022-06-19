@@ -12,7 +12,7 @@ namespace WebApplication3
         public string? Author { get; set; }
         public string? BookCondition { get; set; }
         public string? Year { get; set; }
-        public string? Reader { get; set; }
+        public int? Reader { get; set; }
     }
 
 

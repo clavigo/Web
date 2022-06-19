@@ -1,6 +1,6 @@
 namespace WebApplication3
 {
-    public class WeatherForecast
+    public class LibraryClient
     {
         public DateTime Date { get; set; }
 

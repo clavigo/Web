@@ -14,6 +14,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.6",
           "MySql.Data": "8.0.29",
           "MySql.EntityFrameworkCore": "6.0.1",
+          "MySql.Web": "8.0.29",
           "MySqlConnector": "2.1.10",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.1",
           "Swashbuckle.AspNetCore": "6.2.3"
@@ -394,6 +395,14 @@
           "lib/net6.0/MySql.EntityFrameworkCore.dll": {
             "assemblyVersion": "6.0.1.0",
             "fileVersion": "6.0.1.0"
+          }
+        }
+      },
+      "MySql.Web/8.0.29": {
+        "runtime": {
+          "lib/net452/MySql.Web.dll": {
+            "assemblyVersion": "8.0.29.0",
+            "fileVersion": "8.0.29.0"
           }
         }
       },
@@ -871,6 +880,13 @@
       "sha512": "sha512-0tXr3gSpOBb0KtTLlBjsQLWW5mk0eCx9SCHOF47O8Rb2Wu1hqiOhC06yBzE8H8d7bXIlqfuN6Iqpgb8OZ/A4kg==",
       "path": "mysql.entityframeworkcore/6.0.1",
       "hashPath": "mysql.entityframeworkcore.6.0.1.nupkg.sha512"
+    },
+    "MySql.Web/8.0.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k346TguiDhX6V4VRc74X3LRn91s07R9pCq9qcxGBjqxY8I1aheKIuvbG8aoAwdj7xLsq4udq/pyKk9q9N6ccIg==",
+      "path": "mysql.web/8.0.29",
+      "hashPath": "mysql.web.8.0.29.nupkg.sha512"
     },
     "MySqlConnector/2.1.10": {
       "type": "package",

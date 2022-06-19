@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qXSn8QeofW9b3hcLeP0m1Zg+MDf8fgy70dYITKgLGbIOMKotzTcrqFgnSoTYn2l2X0RN8UvVGBj+aQpoKNtTWA==",
+  "dgSpecHash": "N/XhO8ZTDHT1TDU4ewQcp2zra6FDpXiVq5iyrFCMT6OPPcv3TyPPxVSkd557D28JnoWYkgabnegHVYDT3NspvA==",
   "success": true,
-  "projectFilePath": "D:\\Univer\\Web\\git\\library project\\WebApplication3\\WebApplication3.csproj",
+  "projectFilePath": "D:\\Univer\\Web\\WebApplication3\\WebApplication3\\WebApplication3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clavi\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\clavi\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
@@ -42,6 +42,7 @@
     "C:\\Users\\clavi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\clavi\\.nuget\\packages\\mysql.data\\8.0.29\\mysql.data.8.0.29.nupkg.sha512",
     "C:\\Users\\clavi\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.1\\mysql.entityframeworkcore.6.0.1.nupkg.sha512",
+    "C:\\Users\\clavi\\.nuget\\packages\\mysql.web\\8.0.29\\mysql.web.8.0.29.nupkg.sha512",
     "C:\\Users\\clavi\\.nuget\\packages\\mysqlconnector\\2.1.10\\mysqlconnector.2.1.10.nupkg.sha512",
     "C:\\Users\\clavi\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\clavi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
@@ -65,5 +66,16 @@
     "C:\\Users\\clavi\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\clavi\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MySql.Web 8.0.29' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MySql.Web",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

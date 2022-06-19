@@ -521,6 +521,15 @@
           "lib/net6.0/MySql.EntityFrameworkCore.dll": {}
         }
       },
+      "MySql.Web/8.0.29": {
+        "type": "package",
+        "compile": {
+          "lib/net452/MySql.Web.dll": {}
+        },
+        "runtime": {
+          "lib/net452/MySql.Web.dll": {}
+        }
+      },
       "MySqlConnector/2.1.10": {
         "type": "package",
         "compile": {
@@ -1774,6 +1783,24 @@
         "mysql.entityframeworkcore.nuspec"
       ]
     },
+    "MySql.Web/8.0.29": {
+      "sha512": "k346TguiDhX6V4VRc74X3LRn91s07R9pCq9qcxGBjqxY8I1aheKIuvbG8aoAwdj7xLsq4udq/pyKk9q9N6ccIg==",
+      "type": "package",
+      "path": "mysql.web/8.0.29",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/web.config.transform",
+        "contentFiles/any/net452/web.config.transform",
+        "contentFiles/any/net48/web.config.transform",
+        "lib/net452/MySql.Web.dll",
+        "lib/net452/MySql.Web.xml",
+        "lib/net48/MySql.Web.dll",
+        "lib/net48/MySql.Web.xml",
+        "mysql.web.8.0.29.nupkg.sha512",
+        "mysql.web.nuspec"
+      ]
+    },
     "MySqlConnector/2.1.10": {
       "sha512": "aVvetx5uRWlfnxXlbybf4t6plnH5IGrXSue8R2ZsBOAH8VfS1GuNYqQ4KREVAzN7JexPbhf41btg8pv34eBTrA==",
       "type": "package",
@@ -2445,6 +2472,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.6",
       "MySql.Data >= 8.0.29",
       "MySql.EntityFrameworkCore >= 6.0.1",
+      "MySql.Web >= 8.0.29",
       "MySqlConnector >= 2.1.10",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.1",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -2457,11 +2485,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univer\\Web\\git\\library project\\WebApplication3\\WebApplication3.csproj",
+      "projectUniqueName": "D:\\Univer\\Web\\WebApplication3\\WebApplication3\\WebApplication3.csproj",
       "projectName": "WebApplication3",
-      "projectPath": "D:\\Univer\\Web\\git\\library project\\WebApplication3\\WebApplication3.csproj",
+      "projectPath": "D:\\Univer\\Web\\WebApplication3\\WebApplication3\\WebApplication3.csproj",
       "packagesPath": "C:\\Users\\clavi\\.nuget\\packages\\",
-      "outputPath": "D:\\Univer\\Web\\git\\library project\\WebApplication3\\obj\\",
+      "outputPath": "D:\\Univer\\Web\\WebApplication3\\WebApplication3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2522,6 +2550,10 @@
             "target": "Package",
             "version": "[6.0.1, )"
           },
+          "MySql.Web": {
+            "target": "Package",
+            "version": "[8.0.29, )"
+          },
           "MySqlConnector": {
             "target": "Package",
             "version": "[2.1.10, )"
@@ -2556,5 +2588,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MySql.Web 8.0.29' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MySql.Web",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
